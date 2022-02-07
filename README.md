@@ -39,7 +39,7 @@ My exploration attempts to answer which type of dataset is best for our use case
 ## Data Processing Pipeline
 The following data processing pipeline was used.
 
-![Data Processing Pipeline](/text-github/images/text_data_processing_pipeline.png?raw=true "Data Processing Pipeline")
+![Data Processing Pipeline](/images/text_data_processing_pipeline.png?raw=true "Data Processing Pipeline")
 
 Open source ready-made models were used in order to bootstrap development for a quick investigation as a proof-of-concept. Details of the models used can be found below.
 
@@ -60,26 +60,30 @@ The rationale for filtering the articles into different categories was to examin
 
 The correlation coefficients between the sentiment index of news articles published today and the number of ACLED protests and riots in the next day were computed and shown below.
 ### Correlation for CommonCrawl Dataset
-![Correlation for CommonCrawl](/text-github/images/commoncrawl_correlation.png)
-The sentiment index of Sports articles had no correlation with the number of ACLED protests and riots of the next day.
+![Correlation for CommonCrawl](/images/commoncrawl_correlation.png)
 
-![CommonCrawl Country Count](/text-github/images/commoncrawl_country_count.png)
+The sentiment index of Sports articles had the least correlation with the number of ACLED protests and riots of the next day.
+
+![CommonCrawl Country Count](/images/commoncrawl_country_count.png)
+
 There was a disproportionately large coverage for the Western countries like US and GB and much lower coverage for our target country, India.
 ### Correlation for Reuters Dataset
-![Correlation for Reuters](/text-github/images/reuters_correlaton.png)
+![Correlation for Reuters](/images/reuters_correlaton.png)
+
 The results from the Reuters dataset were quite contradictory to the results obtained for the CommonCrawl dataset. More specifically, a moderate positive correlation was observed for the Business Sentiment Index of Reuters but a moderate negative correlation was observed for the Business Sentiment Index of CommonCrawl. This could possibly be due to the fact that CommonCrawl consists of many different news providers and upon deeper analysis, I found that many of the news providers included in CommonCrawl were not of high quality. This could serve as noise in the data and might explain our contrasting results.
         
 Furthermore, the results obtained for the Reuters and CommonCrawl datasets should be taken with a pinch of salt, especially because the datasets only span across a mere 9 days. The results obtained from the Times of India dataset should be of more significance as it spanned across 20 years.
 
-![Reuters Country Count](/text-github/images/reuters_country_count.png)
+![Reuters Country Count](/images/reuters_country_count.png)
+
 The same disproportionate coverage of countries was observed.
 ### Correlation for Times of India Dataset
-![Correlation for Times of India](/text-github/images/times_of_india_correlation.png)
+![Correlation for Times of India](/images/times_of_india_correlation.png)
         
 Although weak correlations were observed for Business and World Sentiment Indexes, they were still positive ones. Furthermore, weaker correlations were observed for Sci/Tech and Sports Sentiment Indexes which supports the hypothesis that certain categories of news could have a larger impact on the number of riots and protests.
 
-![](/text-github/images/times_of_india_country_counts.png)
+![Times of India Country Count](/images/times_of_india_country_counts.png)
     
 As expected, most of the articles published by Times of India, a native news publisher are about its local country, India.
     
-In conclusion, it seems that native news publishers may be the better choice for forecasting of social unrest. International news providers may not have as much coverage as native news providers and this could possibly explain the poor results observed.
+In conclusion, it seems that native news publishers may be the best choice for forecasting of social unrest. International news providers may not have as much coverage as native news providers and this could possibly explain the poor results observed.
